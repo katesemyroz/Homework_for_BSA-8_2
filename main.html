@@ -1,0 +1,37 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+	<div id="popup">
+		<div id="startWindow">
+			<p>Enter to the Chat</p>
+			<p>User Name</p>
+			<input type="text" placeholder="Enter your name" id="inputUserName">
+			<p>User Nickname</p>
+			<input type="text" placeholder="Enter your nickname" id="inputUserNickname">
+			<button id="enterChatButton">OK</button>
+			<p id='errorPopupFiled'></p>
+		</div>
+	</div>
+
+	<div id="chat">
+		<p id="userName"></p>
+		<p id="userNickname"></p>
+		<div id="displayUsersDiv">
+			<ul id="displayUsers"></ul>
+		</div>
+		<div id="textPlace"></div>
+		<div id="message">
+			<input type="text" placeholder="Enter your message" id="inputMessage"></input>
+			<button id="sendMessageButton">Send</button>
+			<p id="whoTypes"></p>
+		</div>
+	</div>
+
+	<script src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
