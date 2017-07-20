@@ -45,7 +45,6 @@ io.on('connection', function(socket){
   		if (!existUser){
 	  		users.push(user);
 	  		io.emit('show all users', users);
-			console.log('statred change status');
 			setTimeout(function(){
 	    		changeStatus('online', socket.id);
 			}, 60000);
@@ -92,6 +91,8 @@ http.listen(3000, function(){
 function changeStatus(status, socketId){
 	for (i in users){
 		if (users[i].socketId == socketId){
+			if ((status == 'online') && (users[i].status == 'offline'))
+				break;
 			users[i].status = status;
 			break;
 		}
